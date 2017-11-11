@@ -674,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NeteaseNews" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -694,25 +694,77 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="ofJ-zg-WhQ" kind="relationship" relationship="window.shadowedContentViewController" id="bvJ-Oy-zpr"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Main View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split View Controller-->
+        <scene sceneID="C0E-xU-EGp">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="ofJ-zg-WhQ" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="3qq-hM-fkl"/>
+                        <splitViewItem id="r8X-hI-PlV"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="kvV-Qf-WjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="ofJ-zg-WhQ" id="EDu-rD-x34"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="kvV-Qf-WjQ" id="Dc9-Ko-Xkc"/>
+                        <segue destination="Zcs-gt-hXy" kind="relationship" relationship="splitItems" id="xj1-S3-UJv"/>
+                        <segue destination="d47-5R-ooc" kind="relationship" relationship="splitItems" id="8NI-KE-ZM9"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="lss-uj-k2F" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="709"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="i5r-Y8-dQ8">
+            <objects>
+                <viewController id="Zcs-gt-hXy" sceneMemberID="viewController">
+                    <view key="view" id="pO2-DF-pxd">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="aG7-Md-Efg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="618" y="513"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wGo-KP-nAK">
+            <objects>
+                <viewController id="d47-5R-ooc" sceneMemberID="viewController">
+                    <view key="view" id="H76-dg-FS4">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-Fp-ImE">
+                                <rect key="frame" x="207" y="141" width="37" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="IOh-Ym-3Vv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dOi-Fp-ImE" firstAttribute="centerY" secondItem="H76-dg-FS4" secondAttribute="centerY" id="Aep-SN-w6D"/>
+                            <constraint firstItem="dOi-Fp-ImE" firstAttribute="centerX" secondItem="H76-dg-FS4" secondAttribute="centerX" id="Le9-MC-n7t"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="bHZ-LK-NvU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="912"/>
         </scene>
     </scenes>
 </document>
